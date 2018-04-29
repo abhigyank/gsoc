@@ -1,26 +1,23 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
-title:            Hyde
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
-baseurl:          /
+title:            Abhigyan Khaund
+tagline:          "Google Summer of Code '18"
+description:      "Blog for GSoC '18 with Zulip"
+url:              https://abhigyank.github.io
+baseurl:          /gsoc/
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Abhigyan Khaund'
 
 paginate:         5
 
 # Custom vars
-version:          2.1.0
+version:          1.0.0
+
+contact:
+  github:          https://github.com/abhigyank
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/abhigyank/gsoc
