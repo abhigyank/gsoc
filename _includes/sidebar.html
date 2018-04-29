@@ -2,32 +2,38 @@
      styles, `#sidebar-checkbox` for behavior. -->
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
-<div class="sidebar" id="sidebar">
-  <div class="container">
-     <div class="sidebar-item">
-      <p>{{ site.description }}</p>
-     </div>
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar" style="width: 14rem">
+<div class="container sidebar-sticky">
+  <div class="sidebar-item">
+    <p>{{ site.description }}</p>
+  </div>
 
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Blog</a>
 
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
+    {% comment %}
+      The code below dynamically generates a sidebar nav of pages with
+      `layout: page` in the front-matter. See readme for usage.
+    {% endcomment %}
 
-      {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-          {% endif %}
+    {% assign pages_list = site.pages | sort:"url" %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
         {% endif %}
-      {% endfor %}
+      {% endif %}
+    {% endfor %}
 
-      <a class="sidebar-nav-item" href="{{ site.github }}">GitHub</a>
-      <a class="sidebar-nav-item" href="https://www.linkedin.com/in/abhigyank">Linkedin</a>
-    </nav>
+    <a class="sidebar-nav-item" href="https://github.com/abhigyank">GitHub</a>
+    <a class="sidebar-nav-item" href="https://linkedin.com/in/abhigyank/">LinkedIn</a>
+  </nav>
 
-    <p>&copy; {{ site.time | date: '%Y' }}. Abhigyan Khaund.</p>
+  <div class="sidebar-item">
+    <p>
+      &copy; {{ site.time | date: '%Y' }}. Abhigyan Khaund
+    </p>
+  </div>
+</div>
 </div>
